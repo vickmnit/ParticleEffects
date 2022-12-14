@@ -21,7 +21,7 @@
               },
               {
                 "name": "DISPLAY",
-                "value": "172.30.112.1:0"
+                "value": "172.26.160.1:0"
               }
             ],
             "externalConsole": false,

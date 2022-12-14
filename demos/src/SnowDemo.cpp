@@ -537,7 +537,7 @@ int main(int argc, char *argv[])
 	rainRenderer->enableRenderingHint(DEPTH_TEST,false);
 	rainRenderer->setAtlasDimensions(2,2);
 	rainRenderer->setTransformations(modelview_floor, projectionMat);
-	rainRenderer->setResourcePaths("res/explosion.png", GL_RGBA, "res/Shaders/Splash.vert.glsl", "res/Shaders/Splash.frag.glsl");
+	rainRenderer->setResourcePaths("res/snow.png", GL_RGBA, "res/Shaders/Splash.vert.glsl", "res/Shaders/Splash.frag.glsl");
 
 	setFloorTransformations();
 	setBoxTransformations();
@@ -551,7 +551,7 @@ int main(int argc, char *argv[])
 	splashRenderer->enableRenderingHint(DEPTH_TEST,false);
 	splashRenderer->setAtlasDimensions(2,2);
 	splashRenderer->setTransformations(modelview_floor, projectionMat);
-	splashRenderer->setResourcePaths("res/explosion.png", GL_RGBA, "res/Shaders/Splash.vert.glsl", "res/Shaders/Splash.frag.glsl");
+	splashRenderer->setResourcePaths("res/snow.png", GL_RGBA, "res/Shaders/Splash.vert.glsl", "res/Shaders/Splash.frag.glsl");
 
 	GLESQuadRenderer* splashRenderer1 = GLESQuadRenderer::create();
 	splashRenderer1->setScale(0.05f,0.05f);
@@ -562,7 +562,7 @@ int main(int argc, char *argv[])
 	splashRenderer1->enableRenderingHint(DEPTH_TEST,false);
 	splashRenderer1->setAtlasDimensions(2,2);
 	splashRenderer1->setTransformations(modelview_floor, projectionMat);
-	splashRenderer1->setResourcePaths("res/explosion.png", GL_RGBA, "res/Shaders/Splash.vert.glsl", "res/Shaders/Splash.frag.glsl");
+	splashRenderer1->setResourcePaths("res/snow.png", GL_RGBA, "res/Shaders/Splash.vert.glsl", "res/Shaders/Splash.frag.glsl");
 
 	// Models
 	// rain model
