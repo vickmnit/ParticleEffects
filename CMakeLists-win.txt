@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(spark_demo)
+
+add_definitions(-DGL_GLEXT_PROTOTYPES)
+
+message("SYSTEM NAME : ${CMAKE_SYSTEM_NAME}")
+message("SYSTEM VERSION : ${CMAKE_SYSTEM_VERSION}")
+message("SYSTEM PROCESSOR : ${CMAKE_SYSTEM_PROCESSOR}")
+
+AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/Core" spark_demo_app_SRC)
+AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/Extensions/Emitters" spark_demo_app_SRC)
+AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/Extensions/Modifiers" spark_demo_app_SRC)
+AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/Extensions/Renderers" spark_demo_app_SRC)
+AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/Extensions/Zones" spark_demo_app_SRC)
+AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/RenderingAPIs/OpenGLES" spark_demo_app_SRC)
+AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src" spark_demo_app_SRC)
+list(APPEND spark_demo_app_SRC ${PROJECT_SOURCE_DIR}/demos/src/RainDemo.cpp)
+
+include_directories ("${PROJECT_SOURCE_DIR}/include")
+include_directories ("${PROJECT_SOURCE_DIR}/third_party/pvrsdk/include")
+include_directories ("${PROJECT_SOURCE_DIR}/third_party/glfw/include")
+include_directories ("${PROJECT_SOURCE_DIR}/third_party/glad/include")
+include_directories ("${PROJECT_SOURCE_DIR}/third_party/glm/include")
+include_directories ("${PROJECT_SOURCE_DIR}/src")
+
+ADD_EXECUTABLE(spark_demo_app   ${spark_demo_app_SRC})
+
+target_link_libraries(spark_demo_app ${PROJECT_SOURCE_DIR}/third_party/pvrframe/Windows_x86_64/libEGL.lib)
+target_link_libraries(spark_demo_app ${PROJECT_SOURCE_DIR}/third_party/pvrframe/Windows_x86_64/libGLESv2.lib)
+target_link_libraries(spark_demo_app ${PROJECT_SOURCE_DIR}/third_party/glfw/lib/glfw3.dll)
