@@ -91,7 +91,7 @@ namespace GLES
 
 		void setTexture(GLuint textureIndex);
 
-		void setTransformations(glm::mat4 p_modelview, glm::mat4 p_projection);
+		void setTransformations(glm::mat4 p_modelview = glm::mat4(1.0f), glm::mat4 p_projection = glm::mat4(1.0f), glm::mat4 p_mvp = glm::mat4(1.0f));
 
 		void setResourcePaths(char* p_texturePath, unsigned int p_imageFormat, char* p_vertShaderPath, char* p_fragShaderPath);
 
@@ -137,8 +137,9 @@ namespace GLES
 		Shader* splashShader = nullptr;
 		glm::mat4 modelviewMat;
 		glm::mat4 projectionMat;
+		glm::mat4 mvpMat;
 
-		float xPos, yPos, zPos, angleX, angleY, angleZ, fov, windowWidth, windowHeight, near, far;
+		//float xPos, yPos, zPos, angleX, angleY, angleZ, fov, windowWidth, windowHeight, near, far;
 		char* texturePath = nullptr;
 		char* vertShaderPath = nullptr;
 		char* fragShaderPath = nullptr;

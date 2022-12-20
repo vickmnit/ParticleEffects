@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o"
+  "CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o"
   "CMakeFiles/spark_demo_app.dir/src/Core/SPK_BufferHandler.cpp.o"
   "CMakeFiles/spark_demo_app.dir/src/Core/SPK_DEF.cpp.o"
   "CMakeFiles/spark_demo_app.dir/src/Core/SPK_Emitter.cpp.o"

@@ -19,7 +19,7 @@ AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/Extensions/Zones" spark_demo_app
 AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/RenderingAPIs/OpenGLES" spark_demo_app_SRC)
 AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src/Window" spark_demo_app_SRC)
 AUX_SOURCE_DIRECTORY("${PROJECT_SOURCE_DIR}/src" spark_demo_app_SRC)
-list(APPEND spark_demo_app_SRC ${PROJECT_SOURCE_DIR}/demos/src/SnowDemo.cpp)
+list(APPEND spark_demo_app_SRC ${PROJECT_SOURCE_DIR}/demos/src/RainDemo.cpp)
 
 include_directories ("${PROJECT_SOURCE_DIR}/target/qnx7/usr/include")
 include_directories ("${PROJECT_SOURCE_DIR}/include")

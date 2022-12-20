@@ -37,8 +37,8 @@ namespace GLES
 
 	GLESLineRenderer::GLESLineRenderer(float length,float width) :
 		GLESRenderer(),
-		LineRendererInterface(length,width),
-		RainShader("res/Shaders/Particles.vert.glsl", "res/Shaders/Particles.frag.glsl")
+		LineRendererInterface(length,width)
+		//RainShader("res/Shaders/Particles.vert.glsl", "res/Shaders/Particles.frag.glsl")
 	{}
 
 	bool GLESLineRenderer::checkBuffers(const Group& group)
@@ -56,13 +56,30 @@ namespace GLES
 		FloatBuffer* fBuffer = dynamic_cast<FloatBuffer*>(group.createBuffer(GPU_BUFFER_NAME,FloatBufferCreator(14),0,false));
 		gpuIterator = gpuBuffer = fBuffer->getData();
 
-		RainShader.generateVBO();
+		RainShader->generateVBO();
 	}
 
 	void GLESLineRenderer::destroyBuffers(const Group& group)
 	{
 		group.destroyBuffer(GPU_BUFFER_NAME);
-		RainShader.deleteVBO();
+		RainShader->deleteVBO();
+	}
+
+	void GLESLineRenderer::setTransformations(glm::mat4 p_modelview, glm::mat4 p_projection, glm::mat4 p_mvp)
+	{
+		modelviewMat = p_modelview;
+		projectionMat = p_projection;
+		mvpMat = p_mvp;
+	}
+
+	void GLESLineRenderer::setResourcePaths(char* p_texturePath, unsigned int p_imageFormat, char* p_vertShaderPath, char* p_fragShaderPath)
+	{
+        texturePath = p_texturePath;
+		vertShaderPath = p_vertShaderPath;
+        fragShaderPath = p_fragShaderPath;
+		imageFormat = p_imageFormat;
+        if(RainShader == nullptr)
+		   RainShader = new Shader(vertShaderPath, fragShaderPath);
 	}
 
 	void GLESLineRenderer::render(const Group& group)
@@ -106,24 +123,25 @@ namespace GLES
 
 		// float SampTriVerts[] = {
         //  	-0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, // top right
-        // 	0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, // bottom right
-        // 	0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f // bottom left
+        // 	0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, // bottom right
+        // 	0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f // bottom left
     	// };
 
 		// create transformations
-		modelview = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-		modelview = glm::rotate(modelview, glm::radians(12.0f), glm::vec3(1.0f,0.0f,0.0f));
-		modelview = glm::rotate(modelview, glm::radians(0.0f), glm::vec3(0.0f,1.0f,0.0f));
-		modelview = glm::translate(modelview, glm::vec3(-0.0f,-1.0f,-0.0f));
+		// modelviewMat = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+		// modelviewMat = glm::rotate(modelviewMat, glm::radians(12.0f), glm::vec3(1.0f,0.0f,0.0f));
+		// modelviewMat = glm::rotate(modelviewMat, glm::radians(0.0f), glm::vec3(0.0f,1.0f,0.0f));
+		// modelviewMat = glm::translate(modelviewMat, glm::vec3(-0.0f,-1.0f,-0.0f));
 
-		projection = glm::perspective(glm::radians(45.0f), 256.0f/256.0f, 0.01f, 20.0f);
-		RainShader.bindVBO();
-		RainShader.setVBOData(sizeof(vertices), vertices);
-		RainShader.use();
-		RainShader.setAttribute("aPos", 3, 7, 0);
-		RainShader.setAttribute("aCol", 4, 7, 3);
-		RainShader.setMatrix("modelview", modelview);
-		RainShader.setMatrix("projection", projection);
+		// projectionMat = glm::perspective(glm::radians(45.0f), 256.0f/256.0f, 0.01f, 20.0f);
+		RainShader->bindVBO();
+		RainShader->setVBOData(sizeof(vertices), vertices);
+		RainShader->use();
+		RainShader->setAttribute("aPos", 3, 7, 0);
+		RainShader->setAttribute("aCol", 4, 7, 3);
+		RainShader->setMatrix("modelview", modelviewMat);
+		RainShader->setMatrix("projection", projectionMat);
+		RainShader->setMatrix("mvp", mvpMat);
 		
 		glDrawArrays(GL_LINES,0,nbPartices * 2);
 		//glDrawArrays(GL_TRIANGLES, 0, 3);

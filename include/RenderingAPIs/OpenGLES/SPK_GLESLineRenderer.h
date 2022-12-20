@@ -65,6 +65,10 @@ namespace GLES
 
 		virtual void render(const Group& group);
 
+		void setTransformations(glm::mat4 p_modelview = glm::mat4(1.0f), glm::mat4 p_projection = glm::mat4(1.0f), glm::mat4 p_mvp = glm::mat4(1.0f));
+
+		void setResourcePaths(char* p_texturePath, unsigned int p_imageFormat, char* p_vertShaderPath, char* p_fragShaderPath);
+
 protected :
 
 		virtual bool checkBuffers(const Group& group);
@@ -78,9 +82,15 @@ private :
 		// buffers names
 		static const std::string GPU_BUFFER_NAME;
 
-		Shader RainShader;
-		glm::mat4 modelview;
-		glm::mat4 projection;
+		Shader* RainShader = nullptr;
+		glm::mat4 modelviewMat;
+		glm::mat4 projectionMat;
+		glm::mat4 mvpMat;
+
+		char* texturePath = nullptr;
+		char* vertShaderPath = nullptr;
+		char* fragShaderPath = nullptr;
+		unsigned int imageFormat;
 	};
 
 

@@ -629,18 +629,18 @@ CMakeFiles/spark_demo_app.dir/src/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/spark_demo_app.dir/src/stb_image.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/src/stb_image.cpp -o CMakeFiles/spark_demo_app.dir/src/stb_image.cpp.s
 
-CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o: CMakeFiles/spark_demo_app.dir/flags.make
-CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o: ../../../../../demos/src/SnowDemo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/build/Linux/x86_64/Debug/spark_demo_app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o -c /mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/demos/src/SnowDemo.cpp
+CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o: CMakeFiles/spark_demo_app.dir/flags.make
+CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o: ../../../../../demos/src/RainDemo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/build/Linux/x86_64/Debug/spark_demo_app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o -c /mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/demos/src/RainDemo.cpp
 
-CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/demos/src/SnowDemo.cpp > CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.i
+CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/demos/src/RainDemo.cpp > CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.i
 
-CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/demos/src/SnowDemo.cpp -o CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.s
+CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/VCHOURAS/Downloads/OtherWork/Particle-engine-evaluation/SPARK-1.5.6-Rain-Linux/SPARK-1.5.6-Rain/demos/src/RainDemo.cpp -o CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.s
 
 # Object files for target spark_demo_app
 spark_demo_app_OBJECTS = \
@@ -688,7 +688,7 @@ spark_demo_app_OBJECTS = \
 "CMakeFiles/spark_demo_app.dir/src/RenderingAPIs/OpenGLES/SPK_GLESRenderer.cpp.o" \
 "CMakeFiles/spark_demo_app.dir/src/Window/SPK_Window_Manager.cpp.o" \
 "CMakeFiles/spark_demo_app.dir/src/stb_image.cpp.o" \
-"CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o"
+"CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o"
 
 # External object files for target spark_demo_app
 spark_demo_app_EXTERNAL_OBJECTS =
@@ -737,7 +737,7 @@ spark_demo_app: CMakeFiles/spark_demo_app.dir/src/RenderingAPIs/OpenGLES/SPK_GLE
 spark_demo_app: CMakeFiles/spark_demo_app.dir/src/RenderingAPIs/OpenGLES/SPK_GLESRenderer.cpp.o
 spark_demo_app: CMakeFiles/spark_demo_app.dir/src/Window/SPK_Window_Manager.cpp.o
 spark_demo_app: CMakeFiles/spark_demo_app.dir/src/stb_image.cpp.o
-spark_demo_app: CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o
+spark_demo_app: CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o
 spark_demo_app: CMakeFiles/spark_demo_app.dir/build.make
 spark_demo_app: /usr/lib/x86_64-linux-gnu/libGLEW.so
 spark_demo_app: /usr/lib/x86_64-linux-gnu/libGLESv2.so

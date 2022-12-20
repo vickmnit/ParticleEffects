@@ -522,6 +522,8 @@ int main(int argc, char *argv[])
 	GLESLineRenderer* rainRenderer = GLESLineRenderer::create();
 	rainRenderer->setLength(-0.1f);
 	rainRenderer->enableBlending(true);
+	rainRenderer->setTransformations(modelview_floor, projectionMat);
+	rainRenderer->setResourcePaths("", GL_RGB, "res/Shaders/Particles.vert.glsl", "res/Shaders/Particles.frag.glsl");
 
 	setFloorTransformations();
 	setBoxTransformations();
@@ -570,7 +572,7 @@ int main(int argc, char *argv[])
 
 	// rain emitter
 	//AABox* rainZone = AABox::create(Vector3D(0.0f,5.0f,0.0f));
-	Ring* rainZone = Ring::create(Vector3D(-3.0f,5.0f,-2.0f));
+	Ring* rainZone = Ring::create(Vector3D(-2.0f,5.0f,-1.0f));
 	SphericEmitter* rainEmitter = SphericEmitter::create(Vector3D(0.0f,-1.0f,0.0f),0.0f,0.03f * PI);
 	rainEmitter->setZone(rainZone);
 

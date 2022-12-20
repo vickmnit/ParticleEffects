@@ -169,32 +169,32 @@ spark_demo_app/fast:
 	$(MAKE) -f CMakeFiles/spark_demo_app.dir/build.make CMakeFiles/spark_demo_app.dir/build
 .PHONY : spark_demo_app/fast
 
-demos/src/SnowDemo.o: demos/src/SnowDemo.cpp.o
+demos/src/RainDemo.o: demos/src/RainDemo.cpp.o
 
-.PHONY : demos/src/SnowDemo.o
+.PHONY : demos/src/RainDemo.o
 
 # target to build an object file
-demos/src/SnowDemo.cpp.o:
-	$(MAKE) -f CMakeFiles/spark_demo_app.dir/build.make CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.o
-.PHONY : demos/src/SnowDemo.cpp.o
+demos/src/RainDemo.cpp.o:
+	$(MAKE) -f CMakeFiles/spark_demo_app.dir/build.make CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.o
+.PHONY : demos/src/RainDemo.cpp.o
 
-demos/src/SnowDemo.i: demos/src/SnowDemo.cpp.i
+demos/src/RainDemo.i: demos/src/RainDemo.cpp.i
 
-.PHONY : demos/src/SnowDemo.i
+.PHONY : demos/src/RainDemo.i
 
 # target to preprocess a source file
-demos/src/SnowDemo.cpp.i:
-	$(MAKE) -f CMakeFiles/spark_demo_app.dir/build.make CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.i
-.PHONY : demos/src/SnowDemo.cpp.i
+demos/src/RainDemo.cpp.i:
+	$(MAKE) -f CMakeFiles/spark_demo_app.dir/build.make CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.i
+.PHONY : demos/src/RainDemo.cpp.i
 
-demos/src/SnowDemo.s: demos/src/SnowDemo.cpp.s
+demos/src/RainDemo.s: demos/src/RainDemo.cpp.s
 
-.PHONY : demos/src/SnowDemo.s
+.PHONY : demos/src/RainDemo.s
 
 # target to generate assembly for a file
-demos/src/SnowDemo.cpp.s:
-	$(MAKE) -f CMakeFiles/spark_demo_app.dir/build.make CMakeFiles/spark_demo_app.dir/demos/src/SnowDemo.cpp.s
-.PHONY : demos/src/SnowDemo.cpp.s
+demos/src/RainDemo.cpp.s:
+	$(MAKE) -f CMakeFiles/spark_demo_app.dir/build.make CMakeFiles/spark_demo_app.dir/demos/src/RainDemo.cpp.s
+.PHONY : demos/src/RainDemo.cpp.s
 
 src/Core/SPK_BufferHandler.o: src/Core/SPK_BufferHandler.cpp.o
 
@@ -1397,9 +1397,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... spark_demo_app"
-	@echo "... demos/src/SnowDemo.o"
-	@echo "... demos/src/SnowDemo.i"
-	@echo "... demos/src/SnowDemo.s"
+	@echo "... demos/src/RainDemo.o"
+	@echo "... demos/src/RainDemo.i"
+	@echo "... demos/src/RainDemo.s"
 	@echo "... src/Core/SPK_BufferHandler.o"
 	@echo "... src/Core/SPK_BufferHandler.i"
 	@echo "... src/Core/SPK_BufferHandler.s"

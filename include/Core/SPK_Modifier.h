@@ -194,7 +194,8 @@ namespace SPK
 		
 	protected :
 
-		
+		/** @brief the Vector3D that holds the intersection coordinates */
+		//static Vector3D intersection;
 
 		/** @brief the Vector3D that holds the intersection coordinates */
 		static Vector3D normal;

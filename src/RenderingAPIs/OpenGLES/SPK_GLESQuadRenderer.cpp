@@ -48,10 +48,11 @@ namespace GLES
 		textureIndex(0)
 	{}
 
-	void GLESQuadRenderer::setTransformations(glm::mat4 p_modelview, glm::mat4 p_projection)
+	void GLESQuadRenderer::setTransformations(glm::mat4 p_modelview, glm::mat4 p_projection, glm::mat4 p_mvp)
 	{
 		modelviewMat = p_modelview;
 		projectionMat = p_projection;
+		mvpMat = p_mvp;
 	}
 
 	void GLESQuadRenderer::setResourcePaths(char* p_texturePath, unsigned int p_imageFormat, char* p_vertShaderPath, char* p_fragShaderPath)
@@ -171,7 +172,6 @@ namespace GLES
 		for (int i = 0; i < 16; ++i)
 			oldModelView[i] = modelView[i];
 		//glGetFloatv(GL_MODELVIEW_MATRIX,modelView);
-		//group.
 		const float *pSource = (const float*)(glm::value_ptr(modelviewMat));
 		for (int i = 0; i < 16; ++i)
 			modelView[i] = pSource[i];
@@ -302,7 +302,8 @@ namespace GLES
 		//std::cout << "error after modelview set: " << glGetError() << std::endl;
 		splashShader->setMatrix("projection", projectionMat);
 		//std::cout << "error after projection set: " << glGetError() << std::endl;
-
+		splashShader->setMatrix("mvp", mvpMat);
+		
 		splashShader->bindTBO();
 		splashShader->bindVBO();
 		splashShader->bindEBO();
